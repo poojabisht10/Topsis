@@ -10,7 +10,8 @@ Topsis-Pooja-102303845 requires Python3 to run.
 pandas
 numpy
 
-Package listed on PyPI:- (https://pypi.org/project/Topsis-Pooja-102303845/)\
+Package listed on PyPI:- (https://pypi.org/project/Topsis-Pooja-102303845/)
+
 Use the following command to install this package:-
 
 ```bash
@@ -54,4 +55,5 @@ Example:
 ```bash
 topsis sample.csv "1,1,1,1" "+,+,-,+" result.csv
 ```
+
 
