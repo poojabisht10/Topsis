@@ -12,9 +12,16 @@ def topsis(input_file, weights, impacts, output_file):
 
     
     try:
-        df = pd.read_excel(input_file)
-    except:
-        print("Error: Unable to read input file")
+        if input_file.endswith(".csv"):
+          df = pd.read_csv(input_file)
+        elif input_file.endswith(".xlsx") or  input_file.endswith(".xls"):
+          df = pd.read_excel(input_file)
+        else:
+          print("Error: Only CSV and Excel files are supported")
+          sys.exit(1)
+
+    except Exception as e:
+        print("Error:", e)
         sys.exit(1)
 
 
@@ -80,7 +87,16 @@ def topsis(input_file, weights, impacts, output_file):
     df["Rank"] = df["Topsis Score"].rank(ascending=False, method='dense').astype(int)
 
     
-    df.to_excel(output_file, index=False)
+    if output_file.endswith(".csv"):
+     df.to_csv(output_file, index=False)
+
+    elif output_file.endswith(".xlsx") or output_file.endswith(".xls"):
+        df.to_excel(output_file, index=False)
+
+    else:
+        print("Error: Output file must be .csv or .xlsx")
+        sys.exit(1)
+
     print("TOPSIS analysis completed successfully")
 
 
