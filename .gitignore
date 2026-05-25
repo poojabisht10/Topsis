@@ -14,6 +14,8 @@ wheels/
 # Virtual environments
 venv/
 env/
+
+# Environment secrets
 .env
 .env.local
 .env.*.local
@@ -33,16 +35,18 @@ desktop.ini
 # Logs
 *.log
 
-# Generated data/output (CLI + web)
+# Generated output
 uploads/
 results/
-topsis_web/uploads
-topsis_web/results
+topsis_web/uploads/
+topsis_web/results/
 
-# Generated data files (global) – but keep static samples
+# Generated datasets/results
 *.csv
 *.xls
 *.xlsx
+
+# Keep sample/static assets
 !topsis_web/static/*.csv
 !topsis_web/static/*.xls
 !topsis_web/static/*.xlsx
